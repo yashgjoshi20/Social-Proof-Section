@@ -1,0 +1,243 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  transition: all 0.3s ease;
+}
+
+:root {
+  /* Primary Colors */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+
+  /* Neutral Colors */
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+
+p {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 35px;
+  padding: 0 35px;
+  color: var(--very-dark-magenta);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 75px 20px;
+  background-image: url(images/bg-pattern-top-mobile.svg),
+    url(images/bg-pattern-bottom-mobile.svg);
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 550px;
+}
+
+.header {
+  text-align: center;
+  grid-area: header;
+}
+
+.header h1 {
+  margin-bottom: 20px;
+}
+
+.header p {
+  padding: 0 26px;
+  color: var(--dark-grayish-magenta);
+}
+
+/* Star Rating */
+
+.stars-rate {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+  grid-area: stars-rate;
+}
+
+.rate-card {
+  background: var(--light-grayish-magenta);
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.rate-card .stars {
+  display: flex;
+  gap: 5px;
+}
+
+.stars img {
+  width: 15px;
+}
+
+.rate-card p {
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+}
+
+/* Testimonial Cards or Comments Card */
+
+.testimonial-board {
+  flex-direction: column;
+  grid-area: testimonial;
+  display: flex;
+  gap: 15px;
+}
+
+.testimonial-card {
+  background: var(--very-dark-magenta);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 32px 28px;
+}
+
+/* Card Author */
+.testimonial-card .author {
+  color: var(--soft-pink);
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.testimonial-card .author img {
+  border-radius: 100%;
+  height: 35px;
+}
+
+.testimonial-card .author .name {
+  color: var(--white);
+}
+
+.testimonial-card .testimonial {
+  padding-right: 30px;
+}
+
+/* Mobile Responsive */
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg);
+  }
+
+  .grid-container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+    grid-template-areas:
+      "header stars-rate"
+      "testimonial testimonial";
+    align-items: center;
+  }
+
+  .header {
+    text-align: left;
+  }
+
+  .header h1 {
+    padding: 0 160px 0 0;
+    font-size: 48px;
+  }
+
+  .header p {
+    padding: 0 100px 0 0;
+  }
+
+  .rate-card {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem 0;
+    width: 75%;
+  }
+
+  .rate-card:first-child {
+    transform: translateX(-100px);
+  }
+  .rate-card:nth-child(2) {
+    transform: translateX(-50px);
+  }
+
+  .testimonial-board {
+    flex-direction: row;
+    column-gap: 25px;
+  }
+
+  .testimonial-card .testimonial {
+    padding-right: 0;
+  }
+
+  .testimonial-card:last-child {
+    transform: translateY(40px);
+  }
+
+  .testimonial-card:nth-child(2) {
+    transform: translateY(20px);
+  }
+}
+
+/* Hovers effects */
+
+.rate-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.rate-card:hover,
+.testimonial-card:hover {
+  scale: 1.1;
+  transform: unset;
+}
+
+.testimonial-card:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+/* Footer */
+.attribution {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    color: var(--gray);
+    bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .attribution a {
+    text-decoration: none;
+    color: var(--dark-gray);
+  }
+  
+  .attribution a:hover {
+    color: blueviolet;
+  }
